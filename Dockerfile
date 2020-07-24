@@ -32,7 +32,7 @@ RUN apt-get update && apt-get install -yq --no-install-recommends telnet \
       libx264-dev \
       libfdk-aac-dev
 RUN mkdir -p ~/ffmpeg_sources ~/bin && cd ~/ffmpeg_sources && \
-    wget -O ffmpeg-4.3.tar.bz2 https://ffmpeg.org/releases/ffmpeg-4.3.tar.bz2 && \
+    wget --no-check-certificate -O ffmpeg-4.3.tar.bz2 https://ffmpeg.org/releases/ffmpeg-4.3.tar.bz2 && \
     tar xjvf ffmpeg-4.3.tar.bz2 && \
     cd ffmpeg-4.3 && \
     PATH="$HOME/bin:$PATH" PKG_CONFIG_PATH="$HOME/ffmpeg_build/lib/pkgconfig" ./configure \
